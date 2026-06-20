@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=650&lines=I+build+AI+infrastructure+%26+full-stack+products;MCP+servers+%C2%B7+RAG+systems+%C2%B7+real-time+data+pipelines;Recent+CIS+grad+who+ships" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=650&lines=I+build+AI+infrastructure+%26+full-stack+products;MCP+servers+%C2%B7+RAG+systems+%C2%B7+real-time+data+pipelines;2+open-source+MCP+servers+in+the+wild;Recent+CIS+grad+who+ships" alt="Typing SVG" />
   </a>
 </p>
 
@@ -20,11 +20,24 @@ Currently based in NJ and open to full-stack & AI engineering roles — remote, 
 ### ⚛️ [Quantum Hardware MCP Server](https://github.com/Lokesh-2025/quantum-hardware-mcp)
 > Open-source MCP server connecting AI assistants directly to live IBM Quantum hardware.
 
-- 7 production-ready tools for quantum circuit execution & backend inspection
-- Automated GitHub Actions data pipeline keeping quantum backend data fresh
-- Listed on official MCP community registries
+- 7 production-ready tools for device status, gate error rates, qubit calibration & queue depths
+- Automated GitHub Actions pipeline — 6-hour snapshots + daily reporting agent, zero human intervention
+- Caught a silent upstream data-integrity failure (IBM changed gate definitions) by diffing historical snapshots — added schema validation at the API boundary
+- Listed on Glama, mcp.so, and PulseMCP
 
-**Stack:** `Python` `MCP` `Qiskit` `IBM Quantum` `GitHub Actions`
+**Stack:** `Python` `MCP SDK` `Qiskit` `IBM Quantum` `SQLite` `GitHub Actions`
+
+---
+
+### 💳 [Stripe MCP Server](https://github.com/Lokesh-2025/stripe-mcp-server)
+> Open-source MCP server connecting Claude to your Stripe account via natural language.
+
+- 7 tools: customers, revenue, invoices, failed payments, subscriptions, refunds, disputes
+- Idempotency keys on write operations — safe to retry, won't double-refund
+- Pinned Stripe API version to prevent silent breakage on upstream changes
+- Listed on Glama and mcp.so
+
+**Stack:** `Node.js` `MCP SDK` `Stripe API` `Zod`
 
 ---
 
@@ -32,10 +45,21 @@ Currently based in NJ and open to full-stack & AI engineering roles — remote, 
 > A fully offline Retrieval-Augmented Generation system — no cloud, no API keys, total privacy.
 
 - Local LLM inference via Ollama + ChromaDB vector store
-- Built-in telemetry and a rigorous evaluation suite
+- Wrote the evaluation harness first — tracking retrieval quality and generation quality as independent failure modes (hit-rate vs ROUGE-L)
 - Achieved **10/10 top-1 retrieval accuracy** on benchmark queries
 
 **Stack:** `Python` `Ollama` `ChromaDB` `RAG` `SQLite`
+
+---
+
+### 🏨 [Multi-Property Motel Booking Platform](https://github.com/Lokesh-2025/lokesh-portfolio)
+> Custom booking platform built for a real client — multi-property motel chain.
+
+- Scoped requirements directly with the client, built and deployed the full product independently
+- Cross-property availability logic, third-party reservation system integration (ASI WebRes)
+- Mobile-first responsive design end to end
+
+**Stack:** `Next.js` `TypeScript` `Tailwind CSS` `Vercel`
 
 ---
 
@@ -55,6 +79,7 @@ Currently based in NJ and open to full-stack & AI engineering roles — remote, 
 ![RAG](https://img.shields.io/badge/RAG-Systems-10B981?style=flat)
 ![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-black?style=flat)
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20DB-orange?style=flat)
+![Stripe](https://img.shields.io/badge/Stripe-API-635BFF?style=flat&logo=stripe&logoColor=white)
 ![Qiskit](https://img.shields.io/badge/Qiskit-6929C4?style=flat&logo=ibm&logoColor=white)
 
 **Web / Backend**
