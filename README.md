@@ -8,9 +8,9 @@
 
 ## 👋 About Me
 
-I'm **Lokesh Pullakandam** — a full-stack & AI engineer and recent Computer Information Science graduate from Rowan University. 🎓
+I'm **Lokesh Pullakandam**  a full-stack & AI engineer and recent Computer Information Science graduate from Rowan University. 🎓
 I build things that matter: MCP servers, RAG systems, real-time data pipelines, and production-grade full-stack apps. 🛠️
-I learn by doing and ship real projects — not toy demos. My ethos is simple: **proof over claims.**
+I learn by doing and ship real projects  not toy demos. My ethos is simple: **proof over claims.**
 Currently based in NJ and open to full-stack & AI engineering roles — remote, hybrid, or on-site. 🌎
 
 ---
@@ -20,9 +20,9 @@ Currently based in NJ and open to full-stack & AI engineering roles — remote, 
 ### ⚛️ [Quantum Hardware MCP Server](https://github.com/Lokesh-2025/quantum-hardware-mcp)
 > Open-source MCP server connecting AI assistants directly to live IBM Quantum hardware.
 
-- 7 production-ready tools for device status, gate error rates, qubit calibration & queue depths
-- Automated GitHub Actions pipeline — 6-hour snapshots + daily reporting agent, zero human intervention
-- Caught a silent upstream data-integrity failure (IBM changed gate definitions) by diffing historical snapshots — added schema validation at the API boundary
+- 7 production ready tools for device status, gate error rates, qubit calibration & queue depths
+- Automated GitHub Actions pipeline  6-hour snapshots + daily reporting agent, zero human intervention
+- Caught a silent upstream data-integrity failure (IBM changed gate definitions) by diffing historical snapshots  added schema validation at the API boundary
 - Listed on Glama, mcp.so, and PulseMCP
 
 **Stack:** `Python` `MCP SDK` `Qiskit` `IBM Quantum` `SQLite` `GitHub Actions`
@@ -33,7 +33,7 @@ Currently based in NJ and open to full-stack & AI engineering roles — remote, 
 > Open-source MCP server connecting Claude to your Stripe account via natural language.
 
 - 7 tools: customers, revenue, invoices, failed payments, subscriptions, refunds, disputes
-- Idempotency keys on write operations — safe to retry, won't double-refund
+- Idempotency keys on write operations  safe to retry, won't double-refund
 - Pinned Stripe API version to prevent silent breakage on upstream changes
 - Listed on Glama and mcp.so
 
@@ -45,7 +45,7 @@ Currently based in NJ and open to full-stack & AI engineering roles — remote, 
 > A fully offline Retrieval-Augmented Generation system — no cloud, no API keys, total privacy.
 
 - Local LLM inference via Ollama + ChromaDB vector store
-- Wrote the evaluation harness first — tracking retrieval quality and generation quality as independent failure modes (hit-rate vs ROUGE-L)
+- Wrote the evaluation harness first  tracking retrieval quality and generation quality as independent failure modes (hit-rate vs ROUGE-L)
 - Achieved **10/10 top-1 retrieval accuracy** on benchmark queries
 
 **Stack:** `Python` `Ollama` `ChromaDB` `RAG` `SQLite`
@@ -53,7 +53,7 @@ Currently based in NJ and open to full-stack & AI engineering roles — remote, 
 ---
 
 ### 🏨 [Multi-Property Motel Booking Platform](https://github.com/Lokesh-2025/lokesh-portfolio)
-> Custom booking platform built for a real client — multi-property motel chain.
+> Custom booking platform built for a real client  multi-property motel chain.
 
 - Scoped requirements directly with the client, built and deployed the full product independently
 - Cross-property availability logic, third-party reservation system integration (ASI WebRes)
