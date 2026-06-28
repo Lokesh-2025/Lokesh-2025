@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=650&lines=I+build+AI+infrastructure+%26+full-stack+products;MCP+servers+%C2%B7+RAG+systems+%C2%B7+quantum+hardware;Running+real+experiments+on+IBM+Quantum+hardware;Recent+CIS+grad+who+ships" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=650&lines=I+build+AI+infrastructure+%26+full-stack+products;MCP+servers+%C2%B7+RAG+systems+%C2%B7+quantum+hardware;Running+VQE+%26+Grover%27s+on+real+IBM+Quantum+hardware;Recent+CIS+grad+who+ships" alt="Typing SVG" />
   </a>
 </p>
 
@@ -20,10 +20,11 @@ Currently based in NJ and open to full-stack & AI engineering roles — remote, 
 ### ⚛️ [Quantum Hardware MCP Server](https://github.com/Lokesh-2025/quantum-hardware-mcp)
 > Open-source MCP server connecting AI assistants directly to live IBM Quantum and IonQ hardware.
 
-- **25 tools** — device status, gate error rates, qubit calibration, job submission, reproducibility scoring, credit-aware routing, calibration drift alerts
+- **26 tools** — device status, gate error rates, qubit calibration, job submission, VQE quantum chemistry, reproducibility scoring, credit-aware routing, calibration drift alerts
 - Ran Grover's search on real IBM hardware for Singmaster's Conjecture — **4.11x quantum amplification** at circuit depth 611 — collaboration with Jack Woehr (IBM Quantum veteran, Qiskit contributor)
-- Automated 6-hour snapshot pipeline + daily fleet report, zero human intervention
-- Caught a silent upstream data-integrity failure (IBM changed gate definitions) by diffing historical snapshots — added schema validation at the API boundary
+- Built `run_vqe` tool: finds H2 molecule ground state energy to **chemical accuracy (0.0 mHartree error)** in 60 iterations on local simulator — first step toward drug discovery research
+- Full smoke test suite: **28/28 tools passing** across IBM + IonQ — zero QPU credits spent on tests
+- Automated 6-hour snapshot pipeline across IBM + IonQ + AWS Braket + daily fleet report, zero human intervention
 - Listed on Glama, mcp.so, and PulseMCP
 
 **Stack:** `Python` `MCP SDK` `Qiskit` `IBM Quantum` `IonQ` `SQLite` `GitHub Actions`
