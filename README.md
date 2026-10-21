@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=650&lines=I+build+AI+infrastructure+%26+full-stack+products;MCP+servers+%C2%B7+RAG+systems+%C2%B7+quantum+hardware;178.8%C3%97+amplification+on+real+IBM+quantum+hardware;A+safety+gate+that+caught+4+real+bugs+on+real+hardware;Recent+CIS+grad+who+ships" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=650&lines=I+build+AI+infrastructure+%26+full-stack+products;Co-authored+a+published+Zenodo-archived+quantum+paper;178.8%C3%97+amplification+on+real+IBM+quantum+hardware;A+safety+gate+that+caught+5+real+bugs+before+they+shipped;B.A.+Computing+%26+Informatics+grad+who+ships" alt="Typing SVG" />
   </a>
 </p>
 
@@ -8,22 +8,32 @@
 
 ## 👋 About Me
 
-I'm **Lokesh Pullakandam** — a full-stack & AI engineer and recent graduate from Rowan University. 🎓
-I build things that matter: MCP servers, RAG systems, real-time data pipelines, and production-grade full-stack apps. 🛠️
-I learn by doing and ship real projects — not toy demos. My work runs on real infrastructure and real hardware, and I check it before I claim it.
+I'm **Lokesh Pullakandam** — a full-stack & AI engineer, B.A. Computing and Informatics (Rowan University, Dec 2025). 🎓
+I build things that matter: MCP servers, verification tooling, RAG systems, and production-grade full-stack apps. 🛠️
+I learn by doing and ship real projects — not toy demos. My work runs on real infrastructure and real hardware, and I check it before I claim it — co-authored a published, Zenodo-archived paper built on exactly that discipline.
 Currently based in NJ and open to full-stack & AI engineering roles — remote, hybrid, or on-site. 🌎
 
 ---
 
 ## 🚀 Featured Projects
 
+### 📄 [Verify Before You Trust It, Even Yourself](https://github.com/Lokesh-2025/verify-before-you-trust-it-paper) — Published Paper
+> Co-authored with an IBM Quantum veteran and Qiskit contributor. A verification tool caught five real bugs in our own prior quantum hardware research — including one that had already silently produced a wrong, previously-published number — then we used it to run a real, repeat-confirmed, statistically significant cross-vendor comparison between IBM and IonQ hardware.
+
+- Reported honestly: a real finding (IonQ's result swung significantly over a 6-day gap; IBM's held steady over 37 minutes), stated as an open question rather than an overclaimed vendor verdict
+- Archived and independently citable on Zenodo (DOI [10.5281/zenodo.23545987](https://doi.org/10.5281/zenodo.23545987)) — data and circuits are a [separate public release](https://github.com/Lokesh-2025/ionq-ibm-cross-vendor-data)
+
+**[Read the paper →](https://doi.org/10.5281/zenodo.23545987)**
+
+---
+
 ### 🛡️ [quantum-verifier](https://github.com/Lokesh-2025/quantum-verifier)
 > A safety gate between an AI-generated quantum circuit and real quantum hardware — checks whether a claimed result is actually real before a dollar gets spent.
 
-- **35 tools, 41 tests** — semantic/topology/gate-synthesis checks, an auto-generated control-experiment method that isolates a real effect size without needing a known answer, and account/budget preflight checks for both IBM and IonQ
-- **Caught 4 real bugs on real hardware, automatically, before any of them cost money:** a transpiler silently doubling gate counts and mispredicting noise, a gate family defaulting to retired hardware, an API key pointed at an unfunded account, and a cost estimate wrong by ~2x
+- **53 tools, 296 tests** — semantic/topology/gate-synthesis checks, an auto-generated control-experiment method that isolates a real effect size without needing a known answer, and account/budget preflight checks for both IBM and IonQ
+- **Caught 5 real bugs, automatically, before any of them shipped** — including a transpiler silently doubling IonQ gate counts and mispredicting cost, and two years of calibration history silently logging null data. Investigated a 6th suspected bug and correctly found it wasn't one — the tool has to be trustworthy saying "nothing's wrong" too
 - **First real hardware confirmation**: a graded series of entangling circuits on IonQ, checked, cost-estimated, budget-verified, and submitted for real — all 3 circuits confirmed correct on Forte-Enterprise-1, with a genuine finding along the way (more entanglement isn't automatically better on real hardware — proven with a control experiment, not assumed)
-- Companion project to `quantum-hardware-mcp` below — carries over its general infrastructure, adds a mandatory correctness layer nothing else in this space has
+- The verification backbone behind the published paper above — companion project to `quantum-hardware-mcp` below, adds a mandatory correctness layer nothing else in this space has
 
 **Stack:** `Python` `MCP SDK` `Qiskit` `IonQ` `IBM Quantum Runtime` `SQLite`
 
@@ -32,16 +42,25 @@ Currently based in NJ and open to full-stack & AI engineering roles — remote, 
 ### ⚛️ [Quantum Hardware MCP Server](https://github.com/Lokesh-2025/quantum-hardware-mcp)
 > Open-source MCP server connecting AI assistants directly to real IBM Quantum, IonQ, and AWS Braket hardware.
 
-- **43 tools** — device intelligence, job lifecycle, pre-flight validation, calibration drift alerts, reproducibility scoring, quantum search, quantum chemistry
-- **178.8× quantum amplitude amplification** on `ibm_fez` — first hardware-confirmed 4-way Pascal's Triangle collision: C(14,6) = C(15,5) = C(78,2) = 3003 simultaneously in one job (34% of shots landed on the exact target, 25× cleaner than noise)
-- Discovered IBM's heavy-hex topology is an Ising lattice — built LNAA (Lattice-Native Amplitude Amplification) from scratch, using native RZZ+RX gates. No routing, no SWAP, no ancilla. Result: 27.78× → 178.8× across successive hardware runs
-- Built `equality_oracle_search` — a two-register quantum circuit that finds collisions **without being told the answer first**. Found C(16,2)=C(10,3)=120 blind, on the first run
-- Diagnosed a degree-4 qubit routing failure causing a 263→1,037 gate explosion; built `check_routing_overhead` to catch this before wasting QPU credits
+- **46 tools** — device intelligence, job lifecycle, pre-flight validation, calibration drift alerts, reproducibility scoring, quantum search, quantum chemistry
+- Powers every quantum project on this profile, including the published paper above
 - Built in collaboration with [Jack Woehr](https://github.com/jwoehr) (IBM Quantum veteran, Qiskit contributor) — he runs this server on his own machine
 - Automated calibration snapshot pipeline across 19 backends every 2 hours, via GitHub Actions
 - Listed on [Glama](https://glama.ai), [mcp.so](https://mcp.so), and [PulseMCP](https://pulsemcp.com)
 
 **Stack:** `Python` `MCP SDK` `Qiskit` `IBM Quantum Runtime` `IonQ` `AWS Braket` `FastAPI` `SQLite` `Docker` `GitHub Actions`
+
+---
+
+### 🔺 [Singmaster's Conjecture on IBM Quantum Hardware](https://github.com/Lokesh-2025/singmasters-conjecture)
+> Does any number appear 9+ times in Pascal's Triangle? Real hardware search, not simulation.
+
+- **178.8× quantum amplitude amplification** on real `ibm_fez` hardware — first hardware-confirmed 4-way Pascal's Triangle collision: C(14,6) = C(15,5) = C(78,2) = 3003 simultaneously in one job (34% of shots landed on the exact target, 25× cleaner than noise)
+- Grover's search broke down for a real physical reason — IBM's heavy-hex chip caps every qubit at 3 connections, Grover's oracle needed a 4th. Discovered the chip's topology *is* an Ising lattice and built LNAA (Lattice-Native Amplitude Amplification) from scratch on native RZZ+RX gates — no routing, no SWAP, no ancilla. Result: 27.78× → 178.8× across successive hardware runs
+- Built `equality_oracle_search` — a two-register quantum circuit that finds collisions **without being told the answer first**. Found C(16,2)=C(10,3)=120 blind, on the first run
+- No 9+ value found up to row 50,000 — consistent with the conjecture
+
+**Stack:** `Python` `Qiskit` `IBM Quantum`
 
 ---
 
@@ -79,8 +98,8 @@ Currently based in NJ and open to full-stack & AI engineering roles — remote, 
 
 ---
 
-### 🏨 [Multi-Property Motel Booking Platform](https://github.com/Lokesh-2025/lokesh-portfolio)
-> Custom booking platform built for a real client — multi-property, live reservations.
+### 🏨 Multi-Property Motel Booking Platform — Real Client Project
+> Custom booking platform built for a real client — multi-property, live reservations. Private client codebase — ask me about it directly.
 
 - Scoped requirements directly with the client, built and deployed independently
 - Cross-property availability logic, third-party reservation system integration (ASI WebRes)
